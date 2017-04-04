@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/sunt</property> <!-- ?useUnicode=true&amp;characterEncoding=utf-8 -->
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- DB schema will be updated if needed -->
+        <property name="hbm2ddl.auto">update</property>
+        <mapping resource="com/sunt/user/Cities.hbm.xml"/>
+        <mapping resource="com/sunt/user/User.hbm.xml" />
+        <mapping resource="com/sunt/user/UserInfo.hbm.xml" />
+        <mapping resource="com/sunt/user/Department.hbm.xml" />
+        <mapping resource="com/sunt/user/Position.hbm.xml" />
+        <mapping resource="com/sunt/project/Project.hbm.xml" />
+        <mapping resource="com/sunt/project/ProjectRole.hbm.xml" />
+        <mapping resource="com/sunt/project/ProjectType.hbm.xml" />
+        <mapping resource="com/sunt/project/ProjectStatus.hbm.xml" />
+        <mapping resource="com/sunt/project/ProjectUsers.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
